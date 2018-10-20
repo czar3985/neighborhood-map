@@ -17,20 +17,20 @@
 </head>
 
 <body>
-  <section>
-    <!-- Text filter input box goes here -->
-
-    <!-- List of markers goes here -->
-
-  </section>
-  <main>
-    <!-- Map goes here -->
-
-  </main>
+  <!--Map will be loaded here-->
+  <div id="map"></div>
 
   <!--KnockoutJS Script-->
   <script type="text/javascript"
           src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js">
+  </script>
+
+  <!--Script for the map part of the application-->
+  <script src="js/map.js"></script>
+
+  <!-- Load google maps api asynchronously -->
+  <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsHrNOZvH2Hj54hiHwA80EQh8yYWIf7h4&v=3&callback=initMap">
   </script>
 
   <!--Script for the application-->
