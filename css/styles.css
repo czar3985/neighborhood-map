@@ -18,11 +18,51 @@ html, body {
 
 /*
  *
+ * Header
+ *
+ *
+*/
+
+header {
+  background-color: #333;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.5em;
+  color: #a1a3a2;
+  padding: 10px 0  0 10px;
+  margin: 0;
+}
+
+/*
+ *
+ * Sidebar
+ *
+ *
+*/
+
+#sidebar {
+  height: 100%;
+  width: 325px;
+  top: 50px;
+  left: 0;
+  background-color: #515151;
+}
+
+/*
+ *
  * Map
  *
  *
 */
 
 #map {
-  height: 100%;
+  position: absolute;
+  left: 325px;
+  top: 50px;
+  bottom: 0;
+  right: 0;
 }
