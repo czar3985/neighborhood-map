@@ -20,4 +20,14 @@ function initMap() {
         map: map,
         title: 'Chocolate Hills'
     });
+
+    // First infoWindow
+    var infoWindow = new google.maps.InfoWindow({
+        content: marker.title
+    });
+
+    // Event listener the opens the infoWindow when marker is clicked
+    marker.addListener('click', function () {
+        infoWindow.open(map, marker);
+    });
 }
