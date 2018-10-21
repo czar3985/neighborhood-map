@@ -52,6 +52,14 @@ h1 {
   background-color: #515151;
 }
 
+.selected-location {
+  background-color: lightgray;
+}
+
+.not-selected-location {
+  background-color: inherit;
+}
+
 /*
  *
  * Map

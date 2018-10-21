@@ -21,7 +21,14 @@
     <h1>Bohol Attractions</h1>
   </header>
   <div id="sidebar">
-
+    <!--locationList is a Knockout observable array.-->
+    <!--Upon selecting a cat from the list, run functions that changes-->
+    <!--current location and changes the CSS of the locations in the list-->
+    <ul class="location-list" data-bind="foreach: locationList">
+      <li class="location-link" data-bind="text: name,
+            click: $parent.changeSelected,
+            css: $parent.selectedLocationStatus(name)"></li>
+    </ul>
   </div>
 
   <!--Map will be loaded here-->
