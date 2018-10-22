@@ -31,11 +31,23 @@ header {
   top: 0;
 }
 
+.hamburger-icon {
+  font-size: 1.5em;
+  padding: 10px;
+  color: #a1a3a2;
+  display: inline-block;
+}
+
+.hamburger-icon:hover {
+  cursor: pointer;
+}
+
 h1 {
   font-size: 1.5em;
   color: #a1a3a2;
-  padding: 10px 0  0 10px;
+  padding: 10px 0 0 10px;
   margin: 0;
+  display: inline-block;
 }
 
 /*
