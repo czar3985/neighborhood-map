@@ -50,6 +50,7 @@ h1 {
   width: 325px;
   padding-top: 50px; /* header size */
   background-color: #515151;
+  overflow: auto; /* allows scrolling if list goes past page height */
 }
 
 .selected-location {
