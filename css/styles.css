@@ -59,10 +59,17 @@ h1 {
 
 #sidebar {
   height: 100%;
-  width: 325px;
   padding-top: 50px; /* header size */
   background-color: #515151;
   overflow: auto; /* allows scrolling if list goes past page height */
+}
+
+.sidebar-showing {
+  width: 325px;
+}
+
+.sidebar-not-showing {
+  width: 0;
 }
 
 .search-form {
@@ -114,8 +121,15 @@ h1 {
 
 #map {
   position: absolute;
-  left: 325px;
   top: 50px;
   bottom: 0;
   right: 0;
+}
+
+.map-small-display {
+  left: 325px;
+}
+
+.map-big-display {
+  left: 0;
 }
