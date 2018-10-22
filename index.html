@@ -21,6 +21,12 @@
     <h1>Bohol Attractions</h1>
   </header>
   <div id="sidebar">
+    <!--Location filtering-->
+    <form class="search-form" action="#" method='POST'>
+      <input class="search-field" type="text" name="search-keyword" placeholder="Search locations..." required>
+      <input class="search-button" type='submit' value=&#128270;>
+    </form>
+
     <!--locationList is a Knockout observable array.-->
     <!--Upon selecting a cat from the list, run functions that changes-->
     <!--current location and changes the CSS of the locations in the list-->
