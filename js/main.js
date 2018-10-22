@@ -4,7 +4,7 @@ var initialLocations = [
     { name: 'Tarsier Conservation Area', location: { lat: 9.676270, lng: 124.091175 } },
     { name: 'Loboc Floating Restaurant', location: { lat: 9.635599, lng: 124.03034245 } },
     { name: 'Hinagdanan Cave', location: { lat: 9.625318, lng: 123.800927 } },
-    { name: 'Panglao Beach', location: { lat: 9.626798, lng: 124.805699 } },
+    { name: 'Panglao Island Beaches', location: { lat: 9.555232, lng: 123.803524 } },
     { name: 'Balicasag Island', location: { lat: 9.516485, lng: 123.683309 } },
     { name: 'Baclayon Church', location: { lat: 9.622828, lng: 123.912447 } },
     { name: 'Python Sanctuary', location: { lat: 9.614213, lng: 123.939295 } },
