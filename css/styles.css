@@ -65,7 +65,7 @@ h1 {
 }
 
 .sidebar-showing {
-  width: 325px;
+  width: 180px;
 }
 
 .sidebar-not-showing {
@@ -127,9 +127,65 @@ h1 {
 }
 
 .map-small-display {
-  left: 325px;
+  left: 180px;
 }
 
 .map-big-display {
   left: 0;
+}
+
+/*
+ *
+ * Styling for responsiveness
+ *
+ *
+*/
+@media screen and (min-width: 500px) {
+  .sidebar-showing {
+    width: 200px;
+  }
+
+  .map-small-display {
+    left: 200px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .sidebar-showing {
+    width: 240px;
+  }
+
+  .map-small-display {
+    left: 240px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .sidebar-showing {
+    width: 270px;
+  }
+
+  .map-small-display {
+    left: 270px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .sidebar-showing {
+    width: 300px;
+  }
+
+  .map-small-display {
+    left: 300px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .sidebar-showing {
+    width: 325px;
+  }
+
+  .map-small-display {
+    left: 325px;
+  }
 }
