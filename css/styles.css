@@ -54,10 +54,28 @@ h1 {
 
 .selected-location {
   background-color: lightgray;
+  color: black;
 }
 
 .not-selected-location {
   background-color: inherit;
+  color: lightgray;
+}
+
+.location-list {
+  list-style: none;
+  padding: 0;
+  margin-right: 8px;
+}
+
+.location-link {
+  margin-bottom: 0.5em;
+  padding: 5px 0 5px 20px;
+  border-radius: 0.5em;
+}
+
+.location-link:hover {
+  cursor: pointer;
 }
 
 /*
