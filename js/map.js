@@ -150,7 +150,7 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 9.718134, lng: 124.088440 },
         styles: styles,
-        zoom: 11
+        zoom: 10
     });
 
     var locationList = [
