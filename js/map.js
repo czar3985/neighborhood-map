@@ -199,6 +199,18 @@ function initMap() {
                     infoWindow.open(map, markerCopy);
                 };
             })(marker));
+
+            // Event listener that animates the marker when clicked
+            marker.addListener('click', (function (markerCopy) {
+                return function () {
+                    if (markerCopy.getAnimation() !== null) {
+                        markerCopy.setAnimation(null);
+                    } else {
+                        markerCopy.setAnimation(google.maps.Animation.BOUNCE);
+                        window.setTimeout(function () { markerCopy.setAnimation(null); }, 750);
+                    }
+                };
+            })(marker));
         }, i * 200, locationList[i]);
     }
 }
