@@ -1,4 +1,4 @@
-// Model 
+// Model
 var Location = function (data) {
     this.name = ko.observable(data.name);
 };
@@ -34,6 +34,15 @@ var ViewModel = function () {
         vm.currentLocation(this);
     };
 
+    // Toggle showList when hamburger icon is clicked
+    this.toggleListDisplay = function () {
+        this.showList(!this.showList());
+    };
+
+    //
+    //   CSS CHANGES
+    //
+
     //Change the list element's css background color depending
     //on the location selected
     this.selectedLocationStatus = function (name) {
@@ -41,11 +50,6 @@ var ViewModel = function () {
             return 'selected-location';
         else
             return 'not-selected-location';
-    };
-
-    // Toggle showList when hamburger icon is clicked
-    this.toggleListDisplay = function () {
-        this.showList(!this.showList());
     };
 
     // Change the sidebar's css width depending on showList value
