@@ -46,10 +46,8 @@ var ViewModel = function () {
     //Change the list element's css background color depending
     //on the location selected
     this.selectedLocationStatus = function (name) {
-        if (name() === vm.currentLocation().name())
-            return 'selected-location';
-        else
-            return 'not-selected-location';
+        return name() === vm.currentLocation().name() ?
+            'selected-location' : 'not-selected-location';
     };
 
     // Change the sidebar's css width depending on showList value
