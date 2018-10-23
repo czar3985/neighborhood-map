@@ -28,9 +28,9 @@
   </header>
   <div id="sidebar" data-bind="css: sidebarDisplayStatus">
     <!--Location filtering-->
-    <form class="search-form" action="#" method='POST'>
-      <input class="search-field" type="text" name="search-keyword" placeholder="Search locations..." required>
-      <input class="search-button" type='submit' value=&#128270;>
+    <form class="search-form">
+      <input class="search-field" type="text" name="search-keyword" placeholder="Search locations or blank to see all..." required>
+      <input class="search-button" type="submit" value=&#128270; data-bind="click: filterList">
     </form>
 
     <!--locationList is a Knockout observable array.-->
@@ -45,6 +45,11 @@
 
   <!--Map will be loaded here-->
   <div id="map" data-bind="css: mapDisplayStatus"></div>
+
+  <!--jQuery Script-->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous"></script>
 
   <!--KnockoutJS Script-->
   <script type="text/javascript"

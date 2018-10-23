@@ -40,6 +40,17 @@ var ViewModel = function () {
         this.showList(!this.showList());
     };
 
+    this.filterList = function () {
+        var searchKeyword = $('.search-field').val().toLowerCase();
+
+        this.locationList().forEach(function (locationData) {
+            if (locationData.name().toLowerCase().includes(searchKeyword))
+                locationData.visible(true);
+            else
+                locationData.visible(false);
+        });
+    };
+
     //
     //   CSS CHANGES
     //
