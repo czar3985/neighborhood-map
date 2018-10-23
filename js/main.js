@@ -1,6 +1,7 @@
 // Model
 var Location = function (data) {
     this.name = ko.observable(data.name);
+    this.visible = ko.observable(data.visible);
 };
 
 // ViewModel
@@ -43,11 +44,23 @@ var ViewModel = function () {
     //   CSS CHANGES
     //
 
-    //Change the list element's css background color depending
-    //on the location selected
-    this.selectedLocationStatus = function (name) {
-        return name() === vm.currentLocation().name() ?
-            'selected-location' : 'not-selected-location';
+    this.listItemStyle = function (name, visible) {
+        var cssStyle = '';
+
+        //Change the list element's css background color depending
+        //on the location selected
+        if (name() === vm.currentLocation().name())
+            cssStyle += 'selected-location ';
+        else
+            cssStyle += 'not-selected-location ';
+
+        // Change visibility status depending on filter results
+        if (visible() === true)
+            cssStyle += 'item-visible';
+        else
+            cssStyle += 'item-not-visible';
+
+        return cssStyle;
     };
 
     // Change the sidebar's css width depending on showList value

@@ -112,6 +112,14 @@ h1 {
   cursor: pointer;
 }
 
+.item-visible {
+  display: block;
+}
+
+.item-not-visible {
+  display: none;
+}
+
 /*
  *
  * Map
