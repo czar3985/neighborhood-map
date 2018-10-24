@@ -14,6 +14,7 @@ function initMap() {
         zoom: 10
     });
 
+    // Create an infoWindow object
     infoWindow = new google.maps.InfoWindow();
 
     // Create the array of markers from the list of locations
@@ -52,4 +53,9 @@ function initMap() {
             })(marker));
         }, i * 200, initialLocations[i]);
     }
+
+    // First marker is clicked initially after all markers are dropped on the map
+    window.setTimeout(function () {
+        new google.maps.event.trigger(markers[0], 'click');
+    }, initialLocations.length * 200);
 }
