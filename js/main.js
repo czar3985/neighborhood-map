@@ -23,7 +23,7 @@ var ViewModel = function () {
     // Initially, the first location in the list is selected
     this.currentLocation = ko.observable(this.locationList()[0]);
 
-    // Initially, list of locations is shown
+    // Initially, list of locations (sidebar) is shown
     this.showList = ko.observable(true);
 
     //
@@ -44,14 +44,26 @@ var ViewModel = function () {
         this.showList(!this.showList());
     };
 
-    this.filterList = function () {
+    // Filter the list and map markers
+    this.filter = function () {
         var searchKeyword = $('.search-field').val().toLowerCase();
 
+        // Close infoWindow in case it is open for a hidden marker
+        infoWindow.close();
+
+        // Set the visible property to be used for list items' styles
+        // Set the marker's visibility in the map
         this.locationList().forEach(function (locationData) {
-            if (locationData.name().toLowerCase().includes(searchKeyword))
+            infoWindow.close();
+
+            if (locationData.name().toLowerCase().includes(searchKeyword)) {
                 locationData.visible(true);
-            else
+                markers[locationData.id()].setVisible(true);
+            }
+            else {
                 locationData.visible(false);
+                markers[locationData.id()].setVisible(false);
+            }
         });
     };
 

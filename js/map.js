@@ -1,5 +1,6 @@
 ﻿var map;
 var markers = [];
+var infoWindow; // One infoWindow for all markers
 
 //Initializes the map
 function initMap() {
@@ -13,8 +14,7 @@ function initMap() {
         zoom: 10
     });
 
-    // One infoWindow for all markers
-    var infoWindow = new google.maps.InfoWindow();
+    infoWindow = new google.maps.InfoWindow();
 
     // Create the array of markers from the list of locations
     for (var i = 0; i < initialLocations.length; i++) {
