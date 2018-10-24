@@ -2,6 +2,7 @@
 var Location = function (data) {
     this.name = ko.observable(data.name);
     this.visible = ko.observable(data.visible);
+    this.id = ko.observable(data.id);
 };
 
 // ViewModel
@@ -29,10 +30,13 @@ var ViewModel = function () {
     //   EVENTS
     //
 
-    // When a new location is selected from the list on the page,
-    // reflect change in the currentLocation property
+    // New location is selected from the list on the page
     this.changeSelected = function () {
+        // Reflect change in the currentLocation property
         vm.currentLocation(this);
+
+        // Trigger a click to the corresponding map marker
+        new google.maps.event.trigger(markers[this.id()], 'click');
     };
 
     // Toggle showList when hamburger icon is clicked
