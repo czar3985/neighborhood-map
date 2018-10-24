@@ -29,7 +29,8 @@
   <div id="sidebar" data-bind="css: sidebarDisplayStatus">
     <!--Location filtering-->
     <form class="search-form">
-      <input class="search-field" type="text" name="search-keyword" placeholder="Search locations or blank to see all..." required>
+      <input class="search-field" type="search" name="search-keyword"
+             placeholder="Filter by name or blank to see all...">
       <input class="search-button" type="submit" value=&#128270; data-bind="click: filter">
     </form>
 
