@@ -47,6 +47,7 @@ var ViewModel = function () {
     // Filter the list and map markers
     this.filter = function () {
         var searchKeyword = $('.search-field').val().toLowerCase();
+        var isFirstFound = false;
 
         // Close infoWindow in case it is open for a hidden marker
         infoWindow.close();
@@ -54,11 +55,18 @@ var ViewModel = function () {
         // Set the visible property to be used for list items' styles
         // Set the marker's visibility in the map
         this.locationList().forEach(function (locationData) {
-            infoWindow.close();
-
             if (locationData.name().toLowerCase().includes(searchKeyword)) {
                 locationData.visible(true);
                 markers[locationData.id()].setVisible(true);
+
+                if (!isFirstFound) {
+                    isFirstFound = true;
+
+                    // Set first location in filtered list as selected item
+                    // Trigger marker click
+                    vm.currentLocation(locationData);
+                    new google.maps.event.trigger(markers[locationData.id()], 'click');
+                }
             }
             else {
                 locationData.visible(false);
