@@ -32,16 +32,13 @@ function initMap() {
             });
             markers.push(marker);
 
-            // Event listener the opens the infoWindow when marker is clicked
+            // Event listener when marker is clicked
             marker.addListener('click', (function (markerCopy) {
                 return function () {
+                    // Open the info window
                     setUpInfoWindow(markerCopy);
-                };
-            })(marker));
 
-            // Event listener that animates the marker when clicked
-            marker.addListener('click', (function (markerCopy) {
-                return function () {
+                    // Animate the marker when clicked
                     if (markerCopy.getAnimation() !== null) {
                         markerCopy.setAnimation(null);
                     } else {
