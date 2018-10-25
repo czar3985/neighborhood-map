@@ -79,7 +79,7 @@ var initialLocations = [
         id: 12
     },
     {
-        name: 'Virgin Island',
+        name: 'Virgin Island, Bohol',
         location: { lat: 9.558371, lng: 123.722485 },
         visible: true,
         id: 13
