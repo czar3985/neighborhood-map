@@ -70,8 +70,8 @@ function setUpInfoWindow(marker) {
 
         infoWindow.marker = marker;
         infoWindow.setContent('<b>' + marker.title + '</b><br /><br />' +
-            'Relevant Wikipedia Articles:<br/><i>Retrieving...</i><br /><br />' +
-            'Restaurants Nearby:<br /><i>Retrieving...</i>');
+            '<b>Relevant Articles:</b><br /><i>(Powered by Wikipedia)</i><br/><i>Retrieving...</i><br /><br />' +
+            '<b>Restaurants Nearby:</b><br /><i>(Powered by Foursquare)</i><br /><i>Retrieving...</i>');
         infoWindow.open(map, marker);
 
         // Remove associated marker if the infoWindow is closed
@@ -87,9 +87,9 @@ var restaurantsNearby = '<i>None found at this time</i>';
 // Update Info Window
 function updateInfoWindow(marker) {
     infoWindow.setContent('<b>' + marker.title + '</b><br /><br />' +
-        'Relevant Wikipedia Articles:' +
+        '<b>Relevant Articles:</b><br /><i>(Powered by Wikipedia)</i><br />' +
         '<ul>' + wikiLinks + '</ul>' +
-        'Restaurants Nearby:' +
+        '<b>Restaurants Nearby:</b><br /><i>(Powered by Foursquare)</i>' +
         '<ul>' + restaurantsNearby + '</ul>');
     infoWindow.open(map, marker);
 }
