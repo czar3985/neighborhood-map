@@ -35,8 +35,8 @@
     </form>
 
     <!--locationList is a Knockout observable array.-->
-    <!--Upon selecting a cat from the list, run functions that changes-->
-    <!--current location and changes the CSS of the locations in the list-->
+    <!--Upon selecting a location from the list, run functions that changes-->
+    <!--current selected and changes the CSS of the locations in the list-->
     <ul class="location-list" data-bind="foreach: locationList">
       <li class="location-link" data-bind="text: name,
         click: $parent.changeSelected,
