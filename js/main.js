@@ -21,7 +21,7 @@ var ViewModel = function () {
 
     // Remember which is the currently selected location
     // Initially, the first location in the list is selected
-    this.currentLocation = ko.observable(this.locationList()[currentSelectedIndex]);
+    this.currentLocation = ko.observable(currentSelectedIndex);
 
     // Initially, list of locations (sidebar) is shown
     this.showList = ko.observable(true);
@@ -33,7 +33,7 @@ var ViewModel = function () {
     // New location is selected from the list on the page
     this.changeSelected = function () {
         // Reflect change in the currentLocation property
-        vm.currentLocation(this);
+        vm.currentLocation(this.id());
 
         // Trigger a click to the corresponding map marker
         new google.maps.event.trigger(markers[this.id()], 'click');
@@ -68,7 +68,7 @@ var ViewModel = function () {
 
                     // Set first location in filtered list as selected item
                     // Trigger marker click
-                    vm.currentLocation(locationData);
+                    vm.currentLocation(locationData.id());
                     new google.maps.event.trigger(markers[locationData.id()], 'click');
                 }
             }
@@ -88,7 +88,7 @@ var ViewModel = function () {
 
         //Change the list element's css background color depending
         //on the location selected
-        if (name() === vm.currentLocation().name())
+        if (name() === vm.locationList()[vm.currentLocation()].name())
             cssStyle += 'selected-location ';
         else
             cssStyle += 'not-selected-location ';
