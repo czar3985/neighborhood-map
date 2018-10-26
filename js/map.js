@@ -33,20 +33,26 @@ function initMap() {
             markers.push(marker);
 
             // Event listener when marker is clicked
-            marker.addListener('click', (function (markerCopy) {
+            marker.addListener('click', (function (markerObject) {
                 return function () {
+                    var marker = markerObject.marker;
+                    var index = markerObject.id;
+
                     // Open the info window
-                    setUpInfoWindow(markerCopy);
+                    setUpInfoWindow(marker);
 
                     // Animate the marker when clicked
-                    if (markerCopy.getAnimation() !== null) {
-                        markerCopy.setAnimation(null);
+                    if (marker.getAnimation() !== null) {
+                        marker.setAnimation(null);
                     } else {
-                        markerCopy.setAnimation(google.maps.Animation.BOUNCE);
-                        window.setTimeout(function () { markerCopy.setAnimation(null); }, 750);
+                        marker.setAnimation(google.maps.Animation.BOUNCE);
+                        window.setTimeout(function () { marker.setAnimation(null); }, 750);
                     }
+
+                    // Change selected location in the app's model
+                    currentSelectedIndex = index;
                 };
-            })(marker));
+            })({ marker, id:data.id }));
         }, i * 200, initialLocations[i]);
     }
 

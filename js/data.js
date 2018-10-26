@@ -1,4 +1,6 @@
 ﻿// Initial map data
+var currentSelectedIndex = 0;
+
 var initialLocations = [
     {
         name: 'Chocolate Hills',

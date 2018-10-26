@@ -21,7 +21,7 @@ var ViewModel = function () {
 
     // Remember which is the currently selected location
     // Initially, the first location in the list is selected
-    this.currentLocation = ko.observable(this.locationList()[0]);
+    this.currentLocation = ko.observable(this.locationList()[currentSelectedIndex]);
 
     // Initially, list of locations (sidebar) is shown
     this.showList = ko.observable(true);
@@ -37,6 +37,10 @@ var ViewModel = function () {
 
         // Trigger a click to the corresponding map marker
         new google.maps.event.trigger(markers[this.id()], 'click');
+    };
+
+    this.checkMapSelection = function () {
+
     };
 
     // Toggle showList when hamburger icon is clicked
@@ -103,7 +107,7 @@ var ViewModel = function () {
         return this.showList() ? 'sidebar-showing' : 'sidebar-not-showing';
     }, this);
 
-    // Change the sidebar's css width depending on showList value
+    // Change the map's position depending on showList value
     this.mapDisplayStatus = ko.pureComputed(function () {
         return this.showList() ? 'map-small-display' : 'map-big-display';
     }, this);
