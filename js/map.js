@@ -70,7 +70,7 @@ function setUpInfoWindow(marker) {
 
         infoWindow.marker = marker;
         infoWindow.setContent('<b>' + marker.title + '</b><br /><br />' +
-            'Relevant Wikipedia Articles:<br/><i>Retrieving...</i>' +
+            'Relevant Wikipedia Articles:<br/><i>Retrieving...</i><br /><br />' +
             'Restaurants Nearby:<br /><i>Retrieving...</i>');
         infoWindow.open(map, marker);
 
