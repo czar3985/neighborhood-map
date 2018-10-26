@@ -24,18 +24,18 @@ html, body {
 */
 
 header {
-  background-color: #333;
-  height: 50px;
   position: fixed;
-  width: 100%;
   top: 0;
+  height: 50px;
+  width: 100%;
+  background-color: #333;
 }
 
 .hamburger-icon {
-  font-size: 1.5em;
-  padding: 10px;
-  color: #a1a3a2;
   display: inline-block;
+  padding: 10px;
+  font-size: 1.5em;
+  color: #a1a3a2;
 }
 
 .hamburger-icon:hover {
@@ -43,11 +43,11 @@ header {
 }
 
 h1 {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 0 0 10px;
   font-size: 1.5em;
   color: #a1a3a2;
-  padding: 10px 0 0 10px;
-  margin: 0;
-  display: inline-block;
 }
 
 /*
@@ -58,10 +58,10 @@ h1 {
 */
 
 #sidebar {
-  height: 100%;
   padding-top: 50px; /* header size */
-  background-color: #515151;
+  height: 100%;
   overflow: auto; /* allows scrolling if list goes past page height */
+  background-color: #515151;
 }
 
 .sidebar-showing {
@@ -72,18 +72,56 @@ h1 {
   width: 0;
 }
 
+/*
+ *
+ * Search Text Field
+ *
+ *
+*/
+
 .search-form {
-  width: 100%;
   display: flex;
+  width: 100%;
 }
 
 .search-field {
-  width: 85%;
   padding: 0.5em;
+  width: 85%;
 }
 
 .search-button {
   width: 15%;
+}
+
+/*
+ *
+ * Location List
+ *
+ *
+*/
+
+.location-list {
+  margin-right: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.location-link {
+  margin-bottom: 0.5em;
+  padding: 5px 0 5px 20px;
+  border-radius: 0.5em;
+}
+
+  .location-link:hover {
+    cursor: pointer;
+  }
+
+.item-visible {
+  display: block;
+}
+
+.item-not-visible {
+  display: none;
 }
 
 .selected-location {
@@ -94,30 +132,6 @@ h1 {
 .not-selected-location {
   background-color: inherit;
   color: lightgray;
-}
-
-.location-list {
-  list-style: none;
-  padding: 0;
-  margin-right: 8px;
-}
-
-.location-link {
-  margin-bottom: 0.5em;
-  padding: 5px 0 5px 20px;
-  border-radius: 0.5em;
-}
-
-.location-link:hover {
-  cursor: pointer;
-}
-
-.item-visible {
-  display: block;
-}
-
-.item-not-visible {
-  display: none;
 }
 
 /*
