@@ -1,5 +1,5 @@
 ﻿// Initial map data
-var currentSelectedIndex = 0;
+var currentMarker = 0;
 
 var initialLocations = [
     {

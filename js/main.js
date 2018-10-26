@@ -21,7 +21,7 @@ var ViewModel = function () {
 
     // Remember which is the currently selected location
     // Initially, the first location in the list is selected
-    this.currentLocation = ko.observable(currentSelectedIndex);
+    this.currentLocation = ko.observable(currentMarker);
 
     // Initially, list of locations (sidebar) is shown
     this.showList = ko.observable(true);
@@ -40,7 +40,8 @@ var ViewModel = function () {
     };
 
     this.checkMapSelection = function () {
-
+        // Update observable current pointer
+        vm.currentLocation(currentMarker);
     };
 
     // Toggle showList when hamburger icon is clicked

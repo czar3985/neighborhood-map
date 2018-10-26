@@ -50,7 +50,7 @@ function initMap() {
                     }
 
                     // Change selected location in the app's model
-                    currentSelectedIndex = index;
+                    currentMarker = index;
                 };
             })({ marker, id:data.id }));
         }, i * 200, initialLocations[i]);
