@@ -5,7 +5,7 @@ featuring noteworthy spots marked on the map. Third-party APIs (Google Maps, Wik
 articles and Foursquare restaurant search) are used as data sources. A location filtering function and a list view
 are included to provide users several ways of browsing the locations.
 
-![Neighborhood Map App Screenshot](img\neighborhood_map_1346.jpg)
+![Neighborhood Map App Screenshot](./img/neighborhood_map_1346.jpg)
 
 
 ## Developer Notes
