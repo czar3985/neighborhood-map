@@ -9,7 +9,8 @@
 
   <!-- Metas for SEO -->
   <meta name="description" content="Neighborhood map application" />
-  <meta name="keywords" content="neighborhood, map, tourist spots, destinations" />
+  <meta name="keywords" content="neighborhood, map, tourist spots,
+        destinations" />
 
   <!-- Styling for the page -->
   <link rel="stylesheet" href="css/styles.css" />
@@ -21,17 +22,21 @@
 
 <body>
   <header>
+    <!-- Hides/Shows the list of locations -->
     <span class="hamburger-icon" data-bind="click: toggleListDisplay">
       &#9776;
     </span>
     <h1>Bohol Attractions</h1>
   </header>
+
+  <!-- List of locations noted in the map -->
   <div id="sidebar" data-bind="css: sidebarDisplayStatus">
     <!--Location filtering-->
     <form class="search-form">
       <input class="search-field" type="search" name="search-keyword"
              placeholder="Filter by name or blank to see all...">
-      <input class="search-button" type="submit" value=&#128270; data-bind="click: filter">
+      <input class="search-button" type="submit" value=&#128270;
+             data-bind="click: filter">
     </form>
 
     <!--locationList is a Knockout observable array.-->
@@ -45,7 +50,9 @@
   </div>
 
   <!--Map will be loaded here-->
-  <div id="map" data-bind="click: checkMapSelection, css: mapDisplayStatus"></div>
+  <div id="map" data-bind="click: checkMapSelection, css: mapDisplayStatus">
+
+  </div>
 
   <!--jQuery Script-->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -57,7 +64,7 @@
           src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js">
   </script>
 
-  <!--Data placed in a separate file so it can be replaced for other locations-->
+  <!--Data placed in a separate file for easy replacement-->
   <script src="js/data.js"></script>
 
   <!--Map styles placed in a separate file so it can be replaced easily-->
@@ -71,7 +78,7 @@
 
   <!-- Load google maps api asynchronously -->
   <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsHrNOZvH2Hj54hiHwA80EQh8yYWIf7h4&v=3&callback=initMap">
+          src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&v=3&callback=initMap">
   </script>
 </body>
 

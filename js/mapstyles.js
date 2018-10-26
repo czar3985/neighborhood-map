@@ -1,5 +1,8 @@
-﻿// Style Name: Unsaturated Browns
-// From: https://snazzymaps.com/style/70/unsaturated-browns
+﻿//
+// Map Style
+//      Attribution: https://snazzymaps.com/
+//      Style Name: Unsaturated Browns
+//
 var styles = [
     {
         "elementType": "geometry",

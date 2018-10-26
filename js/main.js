@@ -1,11 +1,15 @@
-// Model
+//
+// Location Data
+//
 var Location = function (data) {
     this.name = ko.observable(data.name);
     this.visible = ko.observable(data.visible);
     this.id = ko.observable(data.id);
 };
 
+//
 // ViewModel
+//
 var ViewModel = function () {
     var vm = this;  // Save in a variable for accessing when context changes
 
@@ -30,7 +34,7 @@ var ViewModel = function () {
     //   EVENTS
     //
 
-    // New location is selected from the list on the page
+    // New location is selected from the list
     this.changeSelected = function () {
         // Reflect change in the currentLocation property
         vm.currentLocation(this.id());
@@ -39,8 +43,9 @@ var ViewModel = function () {
         new google.maps.event.trigger(markers[this.id()], 'click');
     };
 
+    // The map is clicked
     this.checkMapSelection = function () {
-        // Update observable current pointer
+        // Update the observable of the selected location
         vm.currentLocation(currentMarker);
     };
 
@@ -70,7 +75,8 @@ var ViewModel = function () {
                     // Set first location in filtered list as selected item
                     // Trigger marker click
                     vm.currentLocation(locationData.id());
-                    new google.maps.event.trigger(markers[locationData.id()], 'click');
+                    new google.maps.event.trigger(markers[locationData.id()],
+                        'click');
                 }
             }
             else {

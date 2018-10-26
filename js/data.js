@@ -1,6 +1,15 @@
-﻿// Initial map data
+﻿//
+// Index of Selected Map Marker
+//
 var currentMarker = 0;
 
+//
+// Initial map locations
+//      name: location name
+//      location: latitude and longitude
+//      visible: display status in the list and map
+//      id: id, index in the list
+//
 var initialLocations = [
     {
         name: 'Chocolate Hills',
