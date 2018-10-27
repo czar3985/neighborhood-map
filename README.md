@@ -52,4 +52,10 @@ url: 'https://api.foursquare.com/v2/venues/search?' +
 
 ## Attributions
 
-The map style titled 'Unsaturated Browns' is from [Snazzy Maps](https://snazzymaps.com/).
+1. The map style titled 'Unsaturated Browns' is from [Snazzy Maps](https://snazzymaps.com/).
+
+2. The solution that checks to see if Google maps loaded successfully
+is from [Don McCurdy](https://stackoverflow.com/users/1314762/don-mccurdy)'s
+reply to [How to check if Google Maps API is loaded?](https://stackoverflow.com/questions/9228958/how-to-check-if-google-maps-api-is-loaded/32125607#32125607)
+in [Stackoverflow.com](https://stackoverflow.com)
+

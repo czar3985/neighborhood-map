@@ -1,6 +1,7 @@
 ﻿var map;            // Google map of the area to be explored
 var markers = [];   // Array of noted spots in the map
 var infoWindow;     // Display data for the selected marker
+var isMapLoaded = false;  // Indicator for error handling
 
 //
 // Initializes the map
@@ -15,6 +16,9 @@ function initMap() {
         styles: styles,
         zoom: 10
     });
+
+    // Map operations can check this variable when performing map operations
+    isMapLoaded = true;
 
     // Create an infoWindow object
     infoWindow = new google.maps.InfoWindow();
@@ -66,6 +70,13 @@ function initMap() {
     window.setTimeout(function () {
         new google.maps.event.trigger(markers[0], 'click');
     }, initialLocations.length * 200);
+}
+
+//
+//  Map API Error Handler
+//
+function mapError() {
+    alert('Error: Map cannot be loaded at this time.');
 }
 
 //

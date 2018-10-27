@@ -40,7 +40,8 @@ var ViewModel = function () {
         vm.currentLocation(this.id());
 
         // Trigger a click to the corresponding map marker
-        new google.maps.event.trigger(markers[this.id()], 'click');
+        if (isMapLoaded)
+            new google.maps.event.trigger(markers[this.id()], 'click');
     };
 
     // The map is clicked
@@ -60,14 +61,16 @@ var ViewModel = function () {
         var isFirstFound = false;
 
         // Close infoWindow in case it is open for a hidden marker
-        infoWindow.close();
+        if (infoWindow)
+            infoWindow.close();
 
         // Set the visible property to be used for list items' styles
         // Set the marker's visibility in the map
         this.locationList().forEach(function (locationData) {
             if (locationData.name().toLowerCase().includes(searchKeyword)) {
                 locationData.visible(true);
-                markers[locationData.id()].setVisible(true);
+                if (markers[locationData.id()])
+                    markers[locationData.id()].setVisible(true);
 
                 if (!isFirstFound) {
                     isFirstFound = true;
@@ -75,13 +78,16 @@ var ViewModel = function () {
                     // Set first location in filtered list as selected item
                     // Trigger marker click
                     vm.currentLocation(locationData.id());
-                    new google.maps.event.trigger(markers[locationData.id()],
-                        'click');
+
+                    if (isMapLoaded)
+                        new google.maps.event.trigger(markers[locationData.id()],
+                            'click');
                 }
             }
             else {
                 locationData.visible(false);
-                markers[locationData.id()].setVisible(false);
+                if (markers[locationData.id()])
+                    markers[locationData.id()].setVisible(false);
             }
         });
     };

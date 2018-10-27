@@ -78,7 +78,8 @@
 
   <!-- Load google maps api asynchronously -->
   <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&v=3&callback=initMap">
+          src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&v=3&callback=initMap"
+            onerror="mapError()">
   </script>
 </body>
 
