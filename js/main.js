@@ -30,6 +30,9 @@ var ViewModel = function () {
     // Initially, list of locations (sidebar) is shown
     this.showList = ko.observable(true);
 
+    // Data binding is with the search input text box
+    this.searchText = ko.observable('');
+
     //
     //   EVENTS
     //
@@ -55,9 +58,18 @@ var ViewModel = function () {
         this.showList(!this.showList());
     };
 
+    // Filter the locations as soon as the input keys in the search text
+    this.searchText.subscribe(function () {
+        vm.filter();
+    });
+
     // Filter the list and map markers
     this.filter = function () {
-        var searchKeyword = $('.search-field').val().toLowerCase();
+        // Search is not case sensitive
+        var searchKeyword = this.searchText().toLowerCase();
+
+        // Flag for identifying which map marker and infoWindow corresponds
+        // to the first location in the filtered list
         var isFirstFound = false;
 
         // Close infoWindow in case it is open for a hidden marker

@@ -34,6 +34,7 @@
     <!--Location filtering-->
     <form class="search-form">
       <input class="search-field" type="search" name="search-keyword"
+             data-bind="value: searchText, valueUpdate: 'afterkeydown'"
              placeholder="Filter by name or blank to see all...">
       <input class="search-button" type="submit" value=&#128270;
              data-bind="click: filter">
