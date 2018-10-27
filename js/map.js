@@ -189,8 +189,8 @@ function searchFoursquare(marker) {
     $.ajax({
         url: 'https://api.foursquare.com/v2/venues/search?' +
             'query=restaurant&limit=5&v=20180323&' +
-            'client_id= CLIENT_ID&' +
-            'client_secret=CLIENT_SECRET&' +
+            'client_id= BG0BB2V1COPP0FG1BJFGIPT14KAGKTYE4FPKFHIBRKVLDIST&' +
+            'client_secret=PJI0EARPCYSZ32NP5RGYZ3BWKO3R5LGB2CW30BV2QJMKVXIJ&' +
             'll=' + marker.position.lat() + ',' + marker.position.lng(),
         dataType: 'json',
         success: function (response) {
