@@ -48,6 +48,8 @@ url: 'https://api.foursquare.com/v2/venues/search?' +
     'll=' + marker.position.lat() + ',' + marker.position.lng(),
 ```
 
+**3. Open `index.html` in the browser to run the Neighborhood Map application.**
+
 ## Attributions
 
 The map style titled 'Unsaturated Browns' is from [Snazzy Maps](https://snazzymaps.com/).
