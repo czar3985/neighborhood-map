@@ -137,7 +137,7 @@ function searchWikipedia(marker) {
     // Stop search when nothing found after the specified time
     var timeout = setTimeout(function () {
         wikiLinks = '<i>None found at this time</i>';
-        updateInfoWindow();
+        updateInfoWindow(marker);
     }, 5000);
 
     // Asynchronous call to wikipedia
@@ -164,6 +164,11 @@ function searchWikipedia(marker) {
             // Update info window with the list of articles
             wikiLinks = links;
             updateInfoWindow(marker);
+        },
+        error: function () {
+            clearTimeout(timeout);
+            wikiLinks = '<i>Error: No articles can be loaded at this time.</i>';
+            updateInfoWindow(marker);
         }
     });
 }
@@ -177,7 +182,7 @@ function searchFoursquare(marker) {
     // Stop search when nothing found after the specified time
     var timeout = setTimeout(function () {
         restaurantsNearby = '<i>None found at this time</i>';
-        updateInfoWindow();
+        updateInfoWindow(marker);
     }, 5000);
 
     // Asynchronous call to foursquare
@@ -202,6 +207,11 @@ function searchFoursquare(marker) {
 
             // Update info window with the list of restaurants
             restaurantsNearby = restaurants;
+            updateInfoWindow(marker);
+        },
+        error: function () {
+            clearTimeout(timeout);
+            restaurantsNearby = '<i>Error: No restaurants can be loaded at this time.</i>';
             updateInfoWindow(marker);
         }
     });
